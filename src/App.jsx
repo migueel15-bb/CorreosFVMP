@@ -548,12 +548,19 @@ export default function App() {
             <label style={{ display: "block", fontWeight: "bold", marginBottom: 8 }}>Afegir contingut:</label>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {["texto","imagen","doscolumnas","caja","boton"].map(tipo => (
-                <button key={tipo} onClick={() => agregarBloque(tipo)} style={estiloBotonAnadir}>
-                  {tipo === "texto" && "Texto"}
-                  {tipo === "imagen" && "Imagen"}
-                  {tipo === "doscolumnas" && "Dos columnas"}
-                  {tipo === "caja" && "Texto en caja"}
-                  {tipo === "boton" && "Botón"}
+                <button key={tipo} onClick={() => agregarBloque(tipo)} style={estiloBotonAnadir} title={
+                  tipo === "texto" ? "Texto" :
+                  tipo === "imagen" ? "Imagen" :
+                  tipo === "doscolumnas" ? "Dos columnas" :
+                  tipo === "caja" ? "Texto en caja" : "Botón"
+                }>
+                  <i className={
+                    tipo === "texto" ? "bi bi-text-left" :
+                    tipo === "imagen" ? "bi bi-image" :
+                    tipo === "doscolumnas" ? "bi bi-layout-split" :
+                    tipo === "caja" ? "bi bi-card-text" :
+                    "bi bi-link-45deg"
+                  } style={{ fontSize: 16 }} />
                 </button>
               ))}
             </div>
