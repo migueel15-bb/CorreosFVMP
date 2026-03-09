@@ -24,6 +24,7 @@ function EditorQuill({ placeholder, onReady }) {
         toolbar: [
           ["bold", "italic", "underline"],
           [{ align: '' }, { align: 'center' }, { align: 'justify' }],
+          [{color: [COLOR_PRINCIPAL, "#000000"]}, { background: [] }],
           [{ list: "ordered" }, { list: "bullet" }],
           ["link"],
           ["clean"],
@@ -121,6 +122,10 @@ export default function App() {
   const editoresQuill = useRef({});
   // Cargar Quill al montar el componente
   useEffect(() => {
+    const resetStyle = document.createElement("style");
+    resetStyle.textContent = "*, *::before, *::after { box-sizing: border-box; } html, body, #root { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }";
+    document.head.appendChild(resetStyle);
+
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://cdn.quilljs.com/1.3.7/quill.snow.css";
@@ -426,7 +431,7 @@ export default function App() {
   }
  // Aqui empieza el renderizado del componente principal
   return (
-    <div style={{ display: "flex", height: "100vh", width: "100vw", overflow: "hidden", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ display: "flex", height: "100%", width: "100%", overflow: "hidden", fontFamily: "Arial, sans-serif" }}>
 
       <div style={{ width: "33.33%", height: "100%", overflowY: "auto", borderRight: "2px solid #ddd", padding: 20, boxSizing: "border-box" }}>
 
@@ -454,8 +459,8 @@ export default function App() {
               justifyContent: "center",
               gap: 10,
               transition: "all 0.15s",
-            }}
-          >
+            }}>
+
             <span style={{
               width: 20, height: 20, borderRadius: "50%",
               border: `2px solid ${hojaVaActiva ? COLOR_PRINCIPAL : "#bbb"}`,
