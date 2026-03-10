@@ -517,9 +517,7 @@ export default function App() {
           </div>
 
           {bloques.length === 0 && (
-            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}>
-              Pulsa un botón de arriba para añadir contenido al correo
-            </p>
+            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}></p>
           )}
 
           {renderPanelBloques(false)}
@@ -571,6 +569,12 @@ export default function App() {
             />
           </div>
 
+          {bloques.length === 0 && (
+            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}></p>
+          )}
+
+          {renderPanelBloques(true)}
+
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: "block", fontWeight: "bold", marginBottom: 8 }}>Afegir contingut:</label>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -592,14 +596,6 @@ export default function App() {
               ))}
             </div>
           </div>
-
-          {bloques.length === 0 && (
-            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}>
-              Polsa un botó de dalt per a afegir contingut al correu
-            </p>
-          )}
-
-          {renderPanelBloques(true)}
         </div>
 
         <button onClick={copiarHTML}
