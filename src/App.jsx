@@ -516,6 +516,14 @@ export default function App() {
             />
           </div>
 
+          {bloques.length === 0 && (
+            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}>
+              Pulsa un botón de arriba para añadir contenido al correo
+            </p>
+          )}
+
+          {renderPanelBloques(false)}
+
           <div style={{ marginBottom: 20 }}>
             <label style={{ display: "block", fontWeight: "bold", marginBottom: 8 }}>Añadir contenido:</label>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -537,14 +545,6 @@ export default function App() {
               ))}
             </div>
           </div>
-
-          {bloques.length === 0 && (
-            <p style={{ color: "#999", textAlign: "center", marginTop: 40 }}>
-              Pulsa un botón de arriba para añadir contenido al correo
-            </p>
-          )}
-
-          {renderPanelBloques(false)}
         </div>
 
         <div style={{ display: (hojaVaActiva && pestanaActiva === "va") ? "block" : "none" }}>
