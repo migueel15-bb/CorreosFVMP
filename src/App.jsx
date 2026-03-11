@@ -219,16 +219,23 @@ export default function App() {
       setTimeout(() => setCopiado(false), 2000);
     });
   }
+
+  function estilizarContenido(html) {
+    return html
+      .replace(/<p>/g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;">')
+      .replace(/<p /g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;" ');
+  }
+
   // Función para renderizar los bloques en formato HTML
   function renderBloquesHTML(sufijo) {
     let contenidoBloques = "";
     bloques.forEach(b => {
-      const contenido = b["contenido" + sufijo] || "";
+      const contenido = estilizarContenido(b["contenido" + sufijo] || "");
       const imagen = b["imagen" + sufijo] || "";
       const urlBoton = b["urlBoton" + sufijo] || "";
       const textoBoton = b["textoBoton" + sufijo] || "";
       const colorBoton = b["colorBoton" + sufijo] || COLOR_PRINCIPAL;
-      const contenidoCol2 = b["contenidoCol2" + sufijo] || "";
+      const contenidoCol2 = estilizarContenido(b["contenidoCol2" + sufijo] || "");
 
       if (b.tipo === "texto") {
         contenidoBloques += `
