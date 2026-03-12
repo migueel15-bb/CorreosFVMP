@@ -222,8 +222,8 @@ export default function App() {
 
   function estilizarContenido(html) {
     return html
-      .replace(/<p>/g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;">')
-      .replace(/<p /g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;" ');
+      .replace(/<p /g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;" ')
+      .replace(/<p>/g, '<p style="margin:0 0 10px 0; font-family:Arial,sans-serif; font-size:14px; line-height:19px; color:#53565A;">');
   }
 
   // Función para renderizar los bloques en formato HTML
