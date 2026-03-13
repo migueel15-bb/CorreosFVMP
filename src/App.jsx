@@ -50,7 +50,6 @@ function EditorQuill({ placeholder, onReady }) {
   const INSTAGRAM_IMAGE = "data:image/png;base64,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";
   const COLOR_PRINCIPAL = "#0060bb";
 
-  
 const piePagina = `
   <tr>
     <td style="padding:18px 24px; border-top:1px solid #E5E7EB; text-align:center;">
@@ -120,7 +119,10 @@ export default function App() {
   const [pestanaActiva, setPestanaActiva] = useState("es");
 
   const editoresQuill = useRef({});
-  // Cargar Quill al montar el componente
+  const iframeRef = useRef(null);
+  const iframeInicializado = useRef(false);
+  
+
   useEffect(() => {
     const resetStyle = document.createElement("style");
     resetStyle.textContent = "*, *::before, *::after { box-sizing: border-box; } html, body, #root { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }";
@@ -136,11 +138,29 @@ export default function App() {
     script.onload = () => setQuillCargado(true);
     document.head.appendChild(script);
   }, []);
-  // Generar el HTML cada vez que cambian los bloques o la configuración de la cabecera
-  useEffect(() => {
-    setHtml(generarHTML());
-  }, [bloques, titulo, tituloVa, imagenCabecera, imagenCabeceraVa, hojaVaActiva]);
 
+  useEffect(() => {
+  setHtml(generarHTML());
+  const iframe = iframeRef.current;
+  if (!iframe) return;
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+  if (!iframeInicializado.current) {
+    iframeInicializado.current = true;
+    doc.open();
+    doc.write("<html><head></head><body style='margin:0;padding:0;background:#F2F4F7;'></body></html>");
+    doc.close();
+  }
+  if (doc && doc.body) {
+    const scrollY = iframe.contentWindow.scrollY || 0;
+      doc.body.innerHTML = generarBodyHTML();
+      doc.body.style.margin = "0";
+      doc.body.style.padding = "0";
+      doc.body.style.background = "#F2F4F7";
+      iframe.contentWindow.scrollTo(0, scrollY);
+   }
+  }, [bloques, titulo, tituloVa, imagenCabecera, imagenCabeceraVa, hojaVaActiva]);
+ 
   function comprimirImagen(archivo, maxWidth = 600, quality = 1) {
     return new Promise((resolve) => {
       const reader = new FileReader();
@@ -159,6 +179,7 @@ export default function App() {
       reader.readAsDataURL(archivo);
     });
   }
+  
 
   async function imagenCabeceraABase64(archivo, esVa = false) {
   const comprimida = await comprimirImagen(archivo, 600, 1);
@@ -289,7 +310,7 @@ export default function App() {
                 <td align="center" bgcolor="${colorBoton}" style="border-radius:3px; width:250px; height:40px;">
                   <a href="${urlBoton}"
                     style="display:inline-block;
-                           width:250px;
+                           width:270px;
                            height:40px;
                            line-height:40px;
                            font-family:Arial,sans-serif;
@@ -355,6 +376,18 @@ export default function App() {
       </table>
     </body>
     </html>`;
+  }
+
+  function generarBodyHTML() {
+    const hojaEs = generarHoja(titulo, imagenCabecera, "", !hojaVaActiva);
+    const hojaVa = hojaVaActiva
+      ? generarHoja(tituloVa, imagenCabeceraVa, "Va", true)
+      : "";
+ 
+    return `<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F2F4F7" style="margin:0;padding:0;">
+        <tr><td align="center" style="padding:20px 0;">${hojaEs}</td></tr>
+        ${hojaVaActiva ? `<tr><td align="center" style="padding:20px 0;">${hojaVa}</td></tr>` : ""}
+      </table>`;
   }
 
    function renderPanelBloques(esVa) {
@@ -563,7 +596,7 @@ export default function App() {
                     tipo === "imagen" ? "bi bi-image" :
                     tipo === "doscolumnas" ? "bi bi-layout-split" :
                     tipo === "caja" ? "bi bi-card-text" :
-                    "bi bi-link-45deg"
+                    "bi bi-cursor"
                   } style={{ fontSize: 16 }} />
                 </button>
               ))}
@@ -640,7 +673,7 @@ export default function App() {
         <div style={{ background: "#333", color: "#ccc", padding: "8px 16px", fontSize: 12, flexShrink: 0 }}>
           Vista previa del correo{hojaVaActiva ? " (Español + Valencià)" : " (Español)"}
         </div>
-        <iframe srcDoc={html} style={{ flex: 1, width: "100%", border: "none" }} title="preview" />
+        <iframe ref={iframeRef} style={{ flex: 1, width: "100%", border: "none" }} title="preview" />
       </div>
 
     </div>
