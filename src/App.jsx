@@ -24,7 +24,7 @@ function EditorQuill({ placeholder, onReady }) {
         toolbar: [
           ["bold", "italic", "underline"],
           [{ align: '' }, { align: 'center' }, { align: 'justify' }],
-          [{color: [COLOR_PRINCIPAL, "#000000"]}, { background: [] }],
+          [{color: [COLOR_PRINCIPAL, "#000000", "#C00000"]}, { background: [] }],
           [{ list: "ordered" }, { list: "bullet" }],
           ["link"],
           ["clean"],
@@ -83,22 +83,9 @@ const piePagina = `
         <a target="_blank" href="https://www.fvmp.es" style="color:${COLOR_PRINCIPAL}; text-decoration:underline;">https://www.fvmp.es</a><br>
         C\\ Guillem de Castro 46, 1ª planta. 46001 Valencia
       </p>
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:14px 24px 24px 24px; font-family:Arial, sans-serif;">
-      <p style="margin:0 0 6px 0; font-size:12px; color:#53565A;"><strong>Aviso legal / Avís legal</strong></p>
-      <p style="margin:0; font-size:11px; line-height:16px; color:#6A6D70; text-align: justify;">
-        <strong>ES:</strong> Este mensaje electrónico está dirigido únicamente al destinatario designado. Su carácter personal e intransferible está protegido legalmente. Cualquier revelación, uso o reenvío no autorizado está prohibida. Si ha recibido este mensaje por error, rogamos lo notifique de inmediato a la persona que lo remite y borre el mensaje original junto con sus ficheros anexos sin leerlo ni grabarlo, total o parcialmente.
-        <br><br>
-        En cumplimiento de las Leyes 34/2002 y 3/2018 le comunicamos que su dirección de correo electrónico forma parte de un fichero con la finalidad de cumplimiento de las funciones de la FVMP. Si lo desea puede ejercer sus derechos enviando un correo a
-        <a target="_blank" href="mailto:protecciondedatos@fvmp.org" style="color:${COLOR_PRINCIPAL}; text-decoration:underline;">protecciondedatos@fvmp.org</a>.
-        <br><br>
-        <strong>VA:</strong> Aquest missatge electrònic està dirigit únicament al destinatari designat. El seu caràcter personal i intransferible està protegit legalment. Qualsevol revelació, ús o reexpedició no autoritzat està prohibit. Si ha rebut aquest missatge per error, preguem que ho notifique immediatament a la persona que ho remet i esborre el missatge original juntament amb els seus fitxers annexos sense llegir-lo ni gravar-lo, totalment o parcialment.
-        <br><br>
-        En compliment de les Lleis 34/2002 i 3/2018, li comuniquem que la seua adreça de correu electrònic forma part d'un fitxer amb la finalitat de donar compliment de les funcions de la FVMP. Si ho desitja pot exercir els seus drets enviant un correu a
-        <a target="_blank" href="mailto:protecciondedatos@fvmp.org" style="color:${COLOR_PRINCIPAL}; text-decoration:underline;">protecciondedatos@fvmp.org</a>.
-      </p>
+      <p style="margin:0; font-family:Arial, sans-serif; font-size:13px; color:#53565A; line-height:19px;">
+       <a target="_blank" href="https://www.fvmp.es/aviso-legal-correo/" style="color:${COLOR_PRINCIPAL}; text-decoration:underline;">Aviso legal</a> <strong>·</strong> <a target="_blank" href="https://www.fvmp.es/avis-legal/?lang=ca" style="color:${COLOR_PRINCIPAL}; text-decoration:underline;">Avis legal</a><br>
+       </p>
     </td>
   </tr>`;
 
