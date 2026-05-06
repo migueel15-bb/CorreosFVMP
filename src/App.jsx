@@ -344,11 +344,10 @@ export default function App() {
     setBloques(prev => prev.filter(b => b.id !== id));
   }
 
-  function imagenBloqueABase64(id, archivo, campoImagen) {
-    const reader = new FileReader();
-    reader.onload = e => actualizarBloque(id, campoImagen, e.target.result);
-    reader.readAsDataURL(archivo);
-  }
+  async function imagenBloqueABase64(id, archivo, campoImagen) {
+    const comprimida = await comprimirImagen(archivo, 600, 0.8);
+    actualizarBloque(id, campoImagen, comprimida);
+}
 
   function guardarEditor(id, campo, quill) {
     const key = id + "-" + campo;
